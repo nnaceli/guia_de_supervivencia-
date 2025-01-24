@@ -256,4 +256,69 @@ De esta forma se logró finalmente cumplir con los requisistos de *Alta segurida
 (imágenes)
 
 
-### carga en base de datos    
+### carga en base de datos
+Los archivos obtenidos luego de encriptar la identidad de los emisores de cada mensaje se tomaron como bases y puntos de referencia para generar los archivos .csv y subir estos a una base de datos
+
+
+#### creación de base de datos
+La base de datos fue creada en PostgreSQL utilizando la aplicación pgAdmin 4. Las tablas que se crearon fueron
+
+* chat_1
+* chat_2
+* chat_3
+* mensajes_chats
+* palabras_chats
+
+El formato general que se utilizó para las columnas de cada tabla de mensajes fue: 
+
+1. Id [PK] -> integer 
+2. fecha -> date 
+3. hora -> time without time zone
+4. Persona -> integer 
+5. mensaje -> character varying (1500)
+
+El formato que se utilizó para las columnas de la tabla de palabras fue: 
+
+1. Id [PK] -> integer
+2. palabra -> character varying (255)
+3. chat -> integer
+
+Para la tabla **mensajes_chats** se agregó la columna **chat -> integer** para indicar a que chat correspondía cada registro
+
+(imagenes)
+
+#### Busqueda interativa de soluciones para subir datos
+Se tomaron como base los set de datos de los 3 chats para generar los archivos .cvs correspondientes a cada tabla, para esto se realizaron las siguientes modificaciones
+
+* Todas las tablas: Al no haber una columna que se pudiera tomar como clave primaria orgánioca, se creo una columna en la que se aplicó una formula contador para asignar un número único a cada registro
+
+    (imágenes)
+
+    A la primer columna se le asigno el valor 1, y a partir de la segunda columna se asignó la siguiente fórmula
+    
+ > = A2+1
+
+Al intentar subir los set de datos, pgAdmi 4 arrojaba mensaje de error sin específicar el motivo. Para hallar y solucionar el error se creo una tabla de prueba para subir set de datos con parte de los registros. El plan consistió en seleccionar registros de forma exponencial, es decir probar subir la siguientes cantidades de registros
+
+- 100
+- 200
+- 500
+- 1000
+- 2000
+- 5000
+- 10000
+- 15000
+
+(imagenes)
+
+El mismo concepto se aplicaría a la inversa en el caso de ecnontrarse con el set de datos erroneo
+
+(imágenes)
+
+Luego de probar esto se halló que el error se ecnontraba en el formato de la fecha el cual era **dd/mm/aaaa** y debía ser **aaaa-mm-dd**
+
+(imagenes)
+
+Así finalmente se logró cargar la información necesaria en las bases de datos
+
+(imágenes)
