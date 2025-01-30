@@ -5,10 +5,6 @@
 ## Introducción
 
 ### Detección de la problemática, surgimiento de la idea y justificación
-    
-    "Experiencia universitaria, armado de grupos y de comunidad
-    Identificación del problema
-    Barajamiento de ideas, selección y justificación"
 
 El ingreso a la educación superior, en especial para las personas que ingresaron por primera vez luego de concluir la educación media a fines de la segunda dédacada del actual siglo (XXI) se vio profundamente marcada por una crisis de escala civilizatoria: La pandemia del COVID-19. En este contexto de caso total incertidumbre las universidades tuvieron que amoldarse a esta nueva situación en la que los estudiantes durante meses solo pudieron disponer y participar de clases, intercambio con sus compañeron, actividades y tramites en formato virtual a traves del uso de apliacciones como Zoom, Google Meet, WhatsApp, Discord y sitios web de cada universidad. Los grupos de WhatsApp, puntualmente, venían siendo y fueron (personalmente creo que lo seguiran siendo) los espacios digitales de mayor participación de los estudiantes para socializar, compartir sus dudas y ayudar a quien lo necesita.
 
@@ -247,6 +243,8 @@ La columna A estaba compuesta por números telefónicos y la columna B por el n�
 
 3. Si el numero existía en el rango se buscaba el valor de clave que concidiera con dicho número y se lo asignaba dicho valor
 
+(imágenes)
+
 Sobre un set de datos de 13 números telefónicos se aplicó la siguiente formula
 
 > =IF(COUNTIFS($A$2:A3;A3)>1;INDEX($B$2:B2; MATCH(A3; $A$2:A2; 0));MAX($B$2:B2)+1) 
@@ -322,3 +320,82 @@ Luego de probar esto se halló que el error se ecnontraba en el formato de la fe
 Así finalmente se logró cargar la información necesaria en las bases de datos
 
 (imágenes)
+
+## Exploración y análisis de datos
+Una vez finalizada la carga de datos, se contó con una base de datos compuesta por las siguientes táblas:
+
+* chat_1
+* chat_2
+* chat_3
+* mensajes_chats
+* palabras_chats
+
+### Rankeo de palabras
+El objetivo principal era hallar las dudas, inquietudes y necesidades de los estudiantes ingresantes. Al no estar trabajando de forma directa con eventos que pueden representarse en números, había que encontrar la forma indirecta de lograr este objetivo. Por esto se deicidió realizar una serie de consultas para obtener los primeros inidicios; el uso de expresiones regulares jugó un papel clave por su gran versatilidad para filtrar consultas utilizando texto como cirterio.
+
+#### Totalidad de palabras utilizadas 
+Se contabilizó la totalidad de palabras utilizadas, como criterio se decidió que debían ser cadenas de palabras compuestas por caracteres de la "A" a la "Z".
+
+(imagenes) 
+
+#### Palabras más utilizadas de forma descendente 
+Se contabilizó la cantidad de veces que se utilizó cada palabra y se ordeno de mayor a menor.
+
+(imágenes)
+
+Muchas de estas palabras no develavan información relevante ya que la mayoría eran conectores por lo que antes de continuar se realizó una investigación de los distintos tipos de palabras que existen
+
+### Criterio de preguntas
+Dentro del conjunto de mensajes hubo que hayar la manera de diferenciar aquellos que expresaran/comunicaran una inquietud de aquellos que no. Se pensó explorar que características poseían los mensajes del tipo pregunta, además del signo de interrogación, pero esto se consideró un esfuerzo innecesario por lo cual la consulta base que se decidió utilizar fue la siguiente
+
+(imágenes)
+
+
+### Clasificación de palabras
+Para utilizar un criterio transversal si investigó los distintos tipos de palabras que existen, sus características y usos. Los resultados fueron los siguientes
+
+|Categoría      |Función    |Referencia   |Tipo  |
+|:--------------|:----------|:------------|:-----|
+|Verbo          |Expresar acciones o estados    |tienen infinitivo (-er, -ar, -ir)   |variable  |
+|Sustantivo     |Nombrar cosas, seres vivos o abstracciones como ideas o sentimientos    |se lo puede acompañar con un determinante o la primer letra es mayuscula|variable  |
+|Adjetivo       |calificar o describir el sustantivo   |responde a la respuesta ¿Cómo es? ¿Cómo está?   |variable  |
+|Determinante   |acompañar al sustantivo para determinar, cuantificar o especificar su signficiado    |se puede poner un sustiantivo delante   |variable  |
+|Pronombre      |sustituir sustantivos   |puede ser sustituido por un sustantivo  |variable  |
+|Preposición    |establecer relación entre dos o más palabras   |son palabras determinadas   |invariable  |
+|Adverbio       |acompañar al verbo y nos indican como se desarrolla una acción    |no cambia de genero ni de número   |invariable  |
+|conjunción     |Expresar acciones o estados    |suele ir entre exclamaciones  |invariable  |
+|interjecciòn   |expresar sorpresa, alegría, susto alarma, saludar, despedirse    |no es ninguna de las anteriores palabras invariables  |invariable  |
+
+Se creo una tabla en la base de datos llamada categoría-palabras, la cual se relacionó con una jnueva columna en la tabla de palabras
+
+(imágenes)
+
+Se inicializó el tipo de palabra para todas las cadenas en null y se clasifico manualmente decenas de de estas
+
+(imágenes)
+
+Como filtro extra se utilizó la ley de pareto la cual establece, en distintos contextos, que el 20% de las causas generan el 80% de los efectos. En este caso se descartó el 20% de las palabras menos relevantes
+
+Se decidió que para hallar las temáticas más relevantes si iba a reankear las palabras más utilizadas cuya cateogría correspondiera a sustantivos ya que se dedujo que esta era la categoría que mejor iba a dilucidar los elementos y eventos más consultados (y así fue efectivamente)
+
+(imágenes)
+
+La lista de palabras del tipo sustantivo más utilizadas en los mensajes del tipo pregunta fué la siguiente
+
+|Palabra    |veces usada|
+|:----------|:----------|
+|C          |441|
+|mate       |270|
+|clase      |243|
+|parcial    |229|
+|hora       |191|
+|año        |173|
+|tema       |156|
+|final      |151|
+|nota       |148|
+|aula       |130|
+|dia        |129|
+|virtual    |128|
+|materia    |121|
+|profe      |115|
+|tp         |101|
