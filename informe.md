@@ -399,3 +399,41 @@ La lista de palabras del tipo sustantivo más utilizadas en los mensajes del tip
 |materia    |121|
 |profe      |115|
 |tp         |101|
+
+### Agrupamiento de preguntas
+En base a la lista de palabras más utilizadas se obtuvieron la 1000 preguntas más relevantes las cuales se procesaron con un algoritmo en python el cual es explicado a continuación
+
+1. En un dataFrame se almacena el contenidod de las preguntas obtenidas gracias al archivo .csv
+
+(imagen o codigo)
+
+> Un dataframe es una estructura de datos similar a .csv donde las filas rerpresentan registros y las columnas variables
+
+2. Se descargan los stopwords las cuales son palabras comunes e irrelevantes en el análisis de texto y se define que se va a utilizar el lenguaje español.
+
+(imágen o código)
+
+3. Se preprocesa el texto al dividirlo en palabras, eliminar las palabras poco relevantes y se vuelven a juntar las palabras restantes en un único string separado por espacios " ".
+
+(imágen o código)
+
+4. Se crea un objeto que convierte un texto en una matriz numerica, cada fila representa una pregunta y cada columna la cantidad de veces que aparece esa palabra en dicha pregunta. Postriormente se le carga los datos del texto preprocesado
+
+(imágen o código)
+
+5. Se agrupan las preguntas en 50 clausters en base a su similitudl, se asigna un numero a cada clouster y lo agrega como una nueva columna del dataframe
+
+(imágen o código)
+
+6. Se obtienen las palabras más importantes de cada clouster y se obtiene una lista de todas las palabras que aparecen en el vocabulario 
+
+(imagen o código)
+
+7. Se imprimen las 5 palabras más importantes de cada clouster
+
+(imagen o codigo)
+
+8. Se contabilizan la cantidad de preguntas por cada clouster, se ordena de mayor a menor y se imprime por consola
+
+(imagen o código)
+
