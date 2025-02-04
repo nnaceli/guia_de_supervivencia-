@@ -400,7 +400,7 @@ La lista de palabras del tipo sustantivo más utilizadas en los mensajes del tip
 |profe      |115|
 |tp         |101|
 
-### Agrupamiento de preguntas
+### Algoritmo en python para agrupar
 En base a la lista de palabras más utilizadas se obtuvieron la 1000 preguntas más relevantes las cuales se procesaron con un algoritmo en python el cual es explicado a continuación
 
 1. En un dataFrame se almacena el contenidod de las preguntas obtenidas gracias al archivo .csv
@@ -437,3 +437,186 @@ En base a la lista de palabras más utilizadas se obtuvieron la 1000 preguntas m
 
 (imagen o código)
 
+
+### Filtro de preguntas semejantes con expresiones regulares
+Tomado el conocimiento de las principales temáticas, se realizaron una serie de consultas al data set en la base de datos utilizando expresiones regulares
+
+1. Preguntas sobre fecha de recuperatorios - 18
+
+(imagenes)
+
+2. Preguntas sobre recuperatorios - 50
+
+(imagenes)
+
+3. Preguntas sobre examenes - 34
+
+(imagenes)
+
+4. Preguntas sobre la clase del día siguiente - 20
+
+(imagenes)
+
+5. Preguntas sobre parciales y finales - 29
+
+(imagenes)
+
+6. Preguntas sobre eventos de hoy y mañana - 19
+
+(imagenes)
+
+7. Preguntas sobre paciales y recuperatorios - 26
+
+(imagenes)
+
+8. Preguntas sobre fotos e imagenes - 57
+
+(imagenes)
+
+9. Preguntas la asignatura organización de computadoras - 17
+
+(imagenes)
+
+10. Preguntas sobre trabajos prácticos de matemática - 14
+
+(imagenes)
+
+11. Preguntas sobre disponibilidad de materias en el campus - 6
+
+(imagenes)
+
+12. Preguntas sobre si un evento es virtual o presencial - 44
+
+(imagenes)
+
+13. Preguntas sobre si un docente subio notas o dijo un anuncio - 15
+
+(imagenes)
+
+14. Preguntas sobre la clase de organización y computadoras - 6
+
+(imagenes)
+
+15. Preguntas sobre si alguien hizo un ejercicio puntual de un tp - 14
+
+(imagenes)
+
+16. Preguntas sobre links - 54
+
+(imagenes)
+
+17. Preguntas sobre links a grupos de whatsapp - 8
+
+(imagenes)
+
+18. Preguntas sobre algebra de boole - 22
+
+(imagenes)
+
+19. Preguntas sobre fecha de parcial y final - 27
+
+(imagenes)
+
+20. Preguntas sobre llamados de exámen - 26
+
+(imagenes)
+
+21. Preguntas sobre fecha correos - 34
+
+(imagenes)
+
+22. Preguntas sobre el cuatrimestre - 26
+
+(imagenes)
+
+23. Preguntas sobre las cursadas - 24
+
+(imagenes)
+
+24. Preguntas sobre el siu guarani - 24
+
+(imagenes)
+
+25. Preguntas sobre la unla - 23
+
+(imagenes)
+
+26. Preguntas sobre el año - 17
+
+(imagenes)
+
+### Segmentación por temáticas
+
+
+Obtenidas el conjunto de preguntas correspondientes a las tematicas más importantes, se hizo una sub-clasificación por cada clauster. Por ejemplo para las preguntas respecto a los trabajos prácticos se diferencio con colores aquellas que correspondian a la asignatura de programación, matemática, organización de computadoras y las que no estaban especificadas
+
+(imágenes)
+
+Se realizo de esta manera el agrupamiento de las preguntas al no lograr encontrar criterios de palabras puntuales utilizando expresiones regulares. A esto se le sumó que un tercio de las preguntas no erán lo suficientemente específicas para darles una clasificación.
+
+(imágenes)
+
+Como resultado se obtuvo una lista de casi 60 preguntas entre las que se incluyeron
+
+- Preguntas más repetidas
+- Preguntas poco realizadas pero que se consideraron relevantes
+
+|Pregunta                                                                       |
+|:------------------------------------------------------------------------------|
+|¿Cuándo es el recuperatorio?                                                   |
+|¿Quiénes no tiene que dar recuperatorio tienen clases igual?                   |
+|¿Si no di el parcial/presente tp, puedo dar el recuperatorio igual?            |
+|¿Qué se tomo en el recuperatorio?                                              |
+|¿Cuándo es el examen?                                                          |
+|¿Qué temas se tomaron en el recuperatorio?                                     |
+|¿Qué temas se tomaron en el examen?                                            |
+|¿Qué temas se van a tomar en el parcial?                                       |
+|¿En que aula se rinde el final?                                                |
+|¿Puedo cursar una materia que desaprobé el final?                              |
+|¿En que aula se cursa, da el examen, rinde el final?                           |
+|¿Hay clases despues del parcial?                                               |
+|¿Qué se tomo en finales anteriores?                                            |
+|¿Qué se tomo en examenes anteriores?                                           |
+|¿Qué documentacion debo presentar para la incripción?                          |
+|¿Cuándo es el final?                                                           |
+|¿Alguien hizo este ejercicio del tp de matematica?                             |
+|¿El tp de matematica se entrega?                                               |
+|¿Cuándo aparece la materia en la que me inscribì en el campus?                 |
+|¿La clase/examen de mañana es presencial o virtual?                            |
+|¿Cuándo se suben las notas?                                                    |
+|¿Ya se subieron las notas?                                                     |
+|¿A qué hora es la clase?                                                       |
+|¿Alguien hizo este punto del tp?                                               |
+|¿Alguien hizo el tp?                                                           |
+|¿A qué mail puedo consultar por el boleto estudiantil?                         |
+|¿Cuándo son las inscripciones?                                                 |
+|¿Me puedo inscribir a dos mesas en un mismo llamado?                           |
+|¿Cuál es el mail del profesor?                                                 |
+|¿Cuál es el mail del depto de idiomas?                                         |
+|¿Cuándo arrancan las clases?                                                   |
+|¿Puedo dar un final de una asignatura que no me anoté?                         |
+|¿Matematica 1 y matematica 2 las puedo cursar en cualquier cuatrimestre?       |
+|¿Cómo me anoto a las materias?                                                 |
+|¿Las fechas de isncripcion a los finales y a las cursadas son las mismas?      |
+|¿Me puedo anotar en un final en el segundo llamado si desaprobé el primero?    |
+|¿Puedo anotarme a una cursada y luego dejarla o no cursarla?                   |
+|¿Cuál es el mapa de la unla?                                                   |
+|¿Cómo me anoto a una cursada o a un final?                                     |
+|¿Cuándo me puedo anotar al segundo llamado?                                    |
+|¿Cuándo son las inscripciones al cuatrimestre?                                 |
+|¿Cuántas veces puedo dar un final sin perder la cursada?                       |
+|¿Dónde me anoto para dar una materia?                                          |
+|¿Es necesario hacer algo mas para anotarme a una materia ademas del siu?       |
+|¿Cuál es el usuario para entrar al siu guarani?                                |
+|¿Qué hago si tengo un problema con el usuario del siu guarani?                 |
+|¿En donde hago la encuesta cuatrimestral?                                      |
+|¿Me tengo que anotar a un final de una asignatura que todavía estoy cursando?  |
+|¿Que pasa cuando se llena el cupo de estudiante?                               |
+|¿Si tengo que recursar una materia, puedo elegir el turno?                     |
+|¿Hay algun archivo con las fechas para incribirse a los finales?               |
+|¿Si promocione una materia, tengo que anotarme al final igual?                 |
+|¿Cómo me anoto para dar un final libre?                                        |
+|¿Con los contenidos vistos en 1er año, se pueda comenzar a trabajar?           |
+|¿Dónde puedo consultar para reincorporarme?                                    |
+|¿Hay deportes en la universidad?                                               |
+|¿Cuánto dura la carrera?                                                       |
