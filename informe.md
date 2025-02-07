@@ -620,3 +620,86 @@ Como resultado se obtuvo una lista de casi 60 preguntas entre las que se incluye
 |¿Dónde puedo consultar para reincorporarme?                                    |
 |¿Hay deportes en la universidad?                                               |
 |¿Cuánto dura la carrera?                                                       |
+
+A continuación se muestra como quedó separadas las preguntas en estos dos grupos
+
+(tabla 1)
+(tabla 2)
+
+Las preguntas del grupo 1 se tomaron como referencia para plasmar en el documento FAQ de preguntas y respuestas. De las preguntas del grupo 2 se tomaron como referencia para el documento FAQ y para tomar medidas indirectas que ayuden a responder dichas preguntas. 
+
+
+
+Resultado de análisis
+Conclusiones de las temáticas
+Conclusiones de las clasificaciones
+
+Las conclusiones que a las que se llegaron por temática fueron
+
+Materias: Las asignaturas de programación y matemática, en comparación a otras, fueron las más consultadas 
+Cursada: La principal duda fue la fecha de los exámenes recuperatorios
+Inscripciones: Se consulta principalmente los criterios y requisitos de inscripción a finales y cursadas igual o más que las fechas de inscripción
+Finales: La duda respecto a si se subieron las notas es casi igual de relevante como los contenidos de evaluación
+
+Hubieron en proporción pareja preguntas que se pueden responder con precisión como preguntas que depende del contexto
+
+De las preguntas que dependen del contexto hubo algunas que se tomaron para responder en el documento FAQ, otras fueron utilizadas como referencia para tomar medidas indirectas y otras se descartaron por estar fuera de alcance de ser respondidas
+
+## creación del documento
+
+Para la elección del diseño se utilizó la plataforma Canva por los siguientes motivos
+Fácil de utilizar
+Plantillas con diseños que se consideran mejores de los que ofrece word de Microsoft o documentos de Google para este proyecto
+Permite descargar archivos en distintos formatos, incluído PDF
+
+Para estructurar el documento se lo dividió en las siguientes partes
+
+- Introducción: Descripción del proyecto, su desarrollo y propósito
+- Glosario de términos: Definición de palabras y conceptos clave que son desconocidos o poco comunes para personas que ingresan por primera vez a la educación superior.
+- Cursadas: Preguntas y respuestas referidas al desarrollo de cada asignatura
+- Inscripciones a cursadas y finales: Preguntas y respuestas referidas a las fechas, pasos y criterios de inscripción
+- Extras: Preguntas y respuestas que no se encontraban dentro de las dos categorías anteriores pero igualmente eran relevantes
+
+Para desarrollar correctamente las respuestas a cada pregunta se pidió ayuda a compañero de carrera y egresados
+
+Una vez construido el documento, fue compartido con personas interesadas para obtener una devolución para saber si estaba claro o había aspectos a pulir y qué medidas creían que se podían tomar para compensar aquellas respuestas a las dudas que no se pudieron plasmar en el documento. De estas conversaciones surgieron las siguientes ideas
+
+Crear un repositorio en la plataforma GitHub para compartir ejercicios y trabajos prácticos sobre programación
+Crear un Drive para compartir fotos de ejercicios resueltos de matemática
+Crear un documento o página desde el que se pueda acceder a links de videos de clases grabadas de distintas asignaturas.
+
+## Conclusiones finales
+
+### Resumen de hallazgos
+
+1. La interacción generada en medio digitales puede brindar un panorama incompleto pero abarcativo sobre las necesidades de una población en el ámbito ducativo
+2. Para lograr un alto consenso sobre el uso de datos sensibles es necesario mencionar y garantizar el anonimato de las personas involucradas
+3. Las dudas más relevantes fueron aquellas que uno pierde de vista o pasa de alto una vez se adapta al entorno, en este caso la vida universitaria
+4. Matemáticas sigue siendo un escollo estructural en la formación secundaria.
+5. Con normas de convivencia acotadas, precisas y claras, se puede contruir entornos digitales colaborativos multitudinarios
+
+### Implicaciones y consideraciones
+
+#### Implicaciones
+- De tener éxito el proyecto, será un ejemplo más de que la ciencia de datos puede estar al servicio de mejorar la educación superior
+- Se espera que el proyecto logre despejar eficaz y eficientemente las dudas transversales para que los estudiantes tengan más tiempo en centrar su esfuerzo en el estudio que requiere cada asignatura
+- Se considera prioritario sostener la oferta de comisiones para las asignaturas de mátematia y programación
+
+#### Consideraciones
+- Los datos utilizados para el análisis corresponden a la primer época posterior a la pandemia del COVID-19
+- Se asumió que un porcentaje mayoritario de los estudiantes ingresantes formaban parte del grupo de whatsapp
+- Se protegió la identidad de todas las personas involucradas en el anonimato
+- Se decidió que el set de datos a publicar solamente corresponderá a los registros sobre las preguntas más relevantes
+- Los datos con los que se dispuso fue la consecuencia de años conformando una comunidad digital y de una gran confianza por parte de sus miembros para que los datos sean utilizados
+
+### Limitaciones
+- El set de datos utilizado solo corresponde, en gran parte, a un único año (2022)
+- El resultado del análisis no logró alcanzar la cantidad y motivos de deserción estudiantil
+- El documento construido no responde a las temáticas más demandadas: Matemáticas y programación
+
+### Sugerencias para futuros proyectos similares 
+
+- Utilizar el lenguaje de programación Python o R 
+- Contar con el consetimiento de las personas involucradas mediante el uso de encuestas
+- Proteger la identidad de las personas involucradas
+- Utilizar datos de varios años para analizar tendencias a largo plazo
