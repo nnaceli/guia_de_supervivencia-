@@ -22,7 +22,7 @@ El objetivo principal del proyecto es responder las 15 preguntas históricas má
 (dashboard tableau)
 (dashboard power BI)
 
-## 🚀 Medida del éxito del rpoyecto
+## 🚀 Medida del éxito del proyecto
 
 El proyecto será considerado un éxito si se logra disminuir de 3,7 a 3 la métrica de la cantidad de pregunta relevantes hechas por estudiantes ingresantes.
 
