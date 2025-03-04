@@ -40,6 +40,6 @@ El objetivo principal del proyecto es responder las 15 preguntas históricas má
 
 El proyecto será considerado un éxito si se logra disminuir de 3,7 a 3 la métrica de la cantidad de pregunta relevantes hechas por estudiantes ingresantes.
 
-# Contacto y crédito
+# 🌐 Contacto y crédito
 - 📧 [Correo de gmail](naceli.cuenta.profesional@gmail.com)  
 - 🔗 [LinkedIn](https://www.linkedin.com/in/nicol%C3%A1s-naceli-38761a1b5/)
