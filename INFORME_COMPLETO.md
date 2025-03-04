@@ -442,8 +442,19 @@ Muchas de estas palabras no develavan información relevante ya que la mayoría 
 ### Criterio de preguntas
 Dentro del conjunto de mensajes hubo que hayar la manera de diferenciar aquellos que expresaran/comunicaran una inquietud de aquellos que no. Se pensó explorar que características poseían los mensajes del tipo pregunta, además del signo de interrogación, pero esto se consideró un esfuerzo innecesario por lo cual la consulta base que se decidió utilizar fue la siguiente
 
-(imágen 39) - CODIGO SQL // 20
-
+```
+-- mensajes que son preguntas
+-- criterio: se consideran preguntas todos aquellos mensajes que terminen de uno a cuatro signos de pregunta
+SELECT 
+	fecha, hora, mensaje
+FROM
+	mensajes_chats
+WHERE 
+	mensaje ~'[a-zA-Z]\?$' OR
+	mensaje ~'[a-zA-Z]\?\?$' OR
+	mensaje ~'[a-zA-Z]\?\?\?$' OR
+	mensaje ~'[a-zA-Z]\?\?\?\?$';
+```
 
 ### Clasificación de palabras
 Para utilizar un criterio transversal si investigó los distintos tipos de palabras que existen, sus características y usos. Los resultados fueron los siguientes
@@ -468,7 +479,63 @@ Como filtro extra se utilizó la ley de pareto la cual establece, en distintos c
 
 Se decidió que para hallar las temáticas más relevantes si iba a reankear las palabras más utilizadas cuya cateogría correspondiera a sustantivos ya que se dedujo que esta era la categoría que mejor iba a dilucidar los elementos y eventos más consultados (y así fue efectivamente)
 
-(imágen 40) - CODIGO SQL
+```
+-- cantidad de apariciones de sustantivos mas usados en mensajes preguntas
+WITH ConteoPalabras as (
+    select count(id) as frecuencia, palabra, categoria
+		from palabras_chats
+		where palabra ~'^[a-zA-Z]+$'   
+		group by palabra, categoria
+),
+PorcentajesAcumulados as (
+    select
+        palabra,
+        frecuencia,
+		categoria,
+        sum(frecuencia) over (order by frecuencia desc) as frecuencia_acumulada,
+        sum(frecuencia) over () as total_frecuencia
+    from
+        ConteoPalabras
+),
+SetentaPorciento as (
+    select
+        sum(frecuencia) * 0.8 as umbral
+    FROM
+        ConteoPalabras
+),
+sustantivos_mas_utilizados AS (
+	SELECT
+	    palabra
+	FROM
+	    PorcentajesAcumulados,
+	    SetentaPorciento
+	WHERE
+	    frecuencia_acumulada <= umbral AND
+		categoria = 2
+),
+mensajes_pregunta AS (
+	SELECT 
+		fecha, hora, mensaje
+	FROM
+		mensajes_chats
+	WHERE
+		mensaje ~'[a-zA-Z]\?$' OR
+		mensaje ~'[a-zA-Z]\?\?$' OR
+		mensaje ~'[a-zA-Z]\?\?\?$' OR
+		mensaje ~'[a-zA-Z]\?\?\?\?$'
+)
+SELECT
+   	palabra, COUNT(mensaje) AS veces_usada_en_mensaje_pregunta
+FROM
+	mensajes_pregunta,
+	sustantivos_mas_utilizados
+WHERE
+	mensaje ~palabra
+GROUP BY
+	palabra
+ORDER BY
+	veces_usada_en_mensaje_pregunta DESC
+```
 
 La lista de palabras del tipo sustantivo más utilizadas en los mensajes del tipo pregunta fué la siguiente
 
@@ -493,40 +560,73 @@ La lista de palabras del tipo sustantivo más utilizadas en los mensajes del tip
 ### Algoritmo en python para agrupar
 En base a la lista de palabras más utilizadas se obtuvieron la 1000 preguntas más relevantes las cuales se procesaron con un algoritmo en python el cual es explicado a continuación
 
-1. En un dataFrame se almacena el contenidod de las preguntas obtenidas gracias al archivo .csv
+1. En un dataFrame se almacena el contenido de las preguntas obtenidas gracias al archivo .csv
 
-(codigo)
+```
+df = pd.read_csv("preguntas.csv")
+```
 
-> Un dataframe es una estructura de datos similar a .csv donde las filas rerpresentan registros y las columnas variables
+> Un dataframe es una estructura de datos que almacena la información de manera tabular, donde las filas representan registros y las columnas variables
 
 2. Se descargan los stopwords las cuales son palabras comunes e irrelevantes en el análisis de texto y se define que se va a utilizar el lenguaje español.
 
-(código)
+```
+nltk.download('stopwords')
+stop_words = set(stopwords.words('spanish'))
+```
 
-3. Se preprocesa el texto al dividirlo en palabras, eliminar las palabras poco relevantes y se vuelven a juntar las palabras restantes en un único string separado por espacios " ".
+3. Se preprocesa el texto al dividirlo en palabras, eliminar las palabras poco relevantes y volver a juntar las palabras restantes en un único string separado por espacios " ".
+```
+def preprocess(text):
+    """
+    Preprocesses text by tokenizing, removing stop words, and lowercasing words.
+    """
+    words = nltk.word_tokenize(text)
+    words = [word.lower() for word in words if word not in stop_words]  # Lowercase words
+    return " ".join(words)
 
-(código)
+df['mensaje_procesado'] = df['mensaje'].apply(preprocess)
+```
 
-4. Se crea un objeto que convierte un texto en una matriz numerica, cada fila representa una pregunta y cada columna la cantidad de veces que aparece esa palabra en dicha pregunta. Postriormente se le carga los datos del texto preprocesado
+4. Se crea un objeto que convierte un texto en una matriz numérica, cada fila representa una pregunta y cada columna la cantidad de veces que aparece esa palabra en dicha pregunta. Posteriormente, se le carga los datos del texto preprocesado
 
-(código)
+```
+vectorizer = CountVectorizer()
+X = vectorizer.fit_transform(df['mensaje_procesado'])
+```
 
-5. Se agrupan las preguntas en 50 clausters en base a su similitudl, se asigna un numero a cada clouster y lo agrega como una nueva columna del dataframe
+5. Se agrupan las preguntas en 50 clusters en base a su similitud numérica, se asigna un numero a cada cluster y lo agrega como una nueva columna del dataframe
 
-(código)
+```
+kmeans = KMeans(n_clusters=50, random_state=0).fit(X)
+df['cluster'] = kmeans.labels_
+```
 
-6. Se obtienen las palabras más importantes de cada clouster y se obtiene una lista de todas las palabras que aparecen en el vocabulario 
+6. Se obtienen los iídices de las palabras con mayor peso de cada cluster y se obtiene la lista de palabras del vocabulario 
 
-(código)
+```
+order_centroids = kmeans.cluster_centers_.argsort()[:, ::-1]
+terms = vectorizer.get_feature_names_out()
+```
 
-7. Se imprimen las 5 palabras más importantes de cada clouster
+7. Se imprimen las 5 palabras más importantes de cada cluster
 
-(codigo)
+```
+for i in range(50):
+    print("Cluster %d:" % i)
+    for ind in order_centroids[i, :5]:
+        print(' %s' % terms[ind])
+```
 
-8. Se contabilizan la cantidad de preguntas por cada clouster, se ordena de mayor a menor y se imprime por consola
+8. Se contabiliza la cantidad de preguntas por cada cluster, se ordena de mayor a menor y se imprimen los 50 clusters con más preguntas
 
-(código)
+```
+cluster_counts = df['cluster'].value_counts()
+cluster_counts = cluster_counts.sort_values(ascending=False)
 
+result_df = pd.DataFrame({'cluster': cluster_counts.index, 'count': cluster_counts.values})
+print(result_df.head(50))
+```
 
 ### Filtro de preguntas semejantes con expresiones regulares
 Tomado el conocimiento de las principales temáticas, se realizaron una serie de consultas al data set en la base de datos utilizando expresiones regulares
