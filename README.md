@@ -34,7 +34,7 @@ El objetivo principal del proyecto es responder las 15 preguntas históricas má
 8. El rango horario de mayor actividad es durante la tarde/noche entre las 18 y 21 hs.
 9. El tópico más consultado son los exámenes y parciales, seguido por los recuperatorios.
 10. Las palabras más utilizadas en preguntas son Matemática y C.
-11. Durante casi todo el año las preguntas relevantes son una de cada diez, en julio se triplica y son dos de cada diez mientras que en marzo se triplica y son tres de cada diez.
+11. Durante casi todo el año las preguntas relevantes son una de cada diez, en julio se duplica y son dos de cada diez mientras que en marzo se triplica y son tres de cada diez.
 
 ## 🚀 Medida del éxito del proyecto
 
