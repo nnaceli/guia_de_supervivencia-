@@ -19,8 +19,8 @@ El objetivo principal del proyecto es responder las 15 preguntas históricas má
 - Power BI: Análisis de la composición y frecuencia de preguntas relevantes.
 
 ## 📊 Imagenes clave
-(dashboard tableau)
-(dashboard power BI)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/dashboards/Distribucion_total_de_mensajes%20_TABLEAU.jpg)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/dashboards/mensajes-preguntas-POWER_BI.jpg)
 
 ## 🚀 Medida del éxito del proyecto
 
