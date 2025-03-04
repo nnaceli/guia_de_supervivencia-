@@ -24,21 +24,21 @@ El objetivo principal del proyecto es responder las 15 preguntas históricas má
 
 ## 🔍 Conclusiones
 
-1. La interacción generada en medio digitales puede brindar un panorama incompleto pero abarcativo sobre las necesidades de una población en el ámbito educativo.
-2. Para lograr un alto consenso sobre el uso de datos sensibles es idoneo consultar y garantizar el anonimato de las personas involucradas.
+1. La interacción generada en medios digitales puede brindar un panorama incompleto pero abarcativo sobre las necesidades de una población en el ámbito educativo.
+2. Para lograr un alto consenso sobre el uso de datos sensibles es idóneo consultar y garantizar el anonimato de las personas involucradas.
 3. Varias de las dudas más relevantes fueron aquellas que uno pierde de vista o pasa por alto una vez se adapta al entorno, en este caso la vida universitaria.
 4. Matemáticas sigue siendo un escollo estructural en la formación secundaria.
 5. Con normas de convivencia acotadas, precisas y claras, se puede construir entornos digitales colaborativos multitudinarios.
 6. Abril es el mes con mayor actividad de todo el año, el pico de máxima actividad sucede en la última semana de marzo.
 7. Los lunes y jueves son los días de la semana con mayor actividad, con una baja de 2/3 los sábados.
 8. El rango horario de mayor actividad es durante la tarde/noche entre las 18 y 21 hs.
-9. El tópico más consultado es los exámenes parciales.
+9. El tópico más consultado son los exámenes y parciales, seguido por los recuperatorios.
 10. Las palabras más utilizadas en preguntas son Matemática y C.
-11. Durante casi todo el año las preguntas relevantes son una de cada diez, en marzo se triplica y son tres de cada diez.
+11. Durante casi todo el año las preguntas relevantes son una de cada diez, en julio se triplica y son dos de cada diez mientras que en marzo se triplica y son tres de cada diez.
 
 ## 🚀 Medida del éxito del proyecto
 
-El proyecto será considerado un éxito si se logra disminuir de 3,7 a 3 la métrica de la cantidad de pregunta relevantes hechas por estudiantes ingresantes.
+El proyecto será considerado un éxito si se logra disminuir de 3,7 a 3 la métrica de la cantidad de preguntas relevantes hechas por estudiantes ingresantes.
 
 # 🌐 Contacto y crédito
 - 📧 [Correo de gmail](naceli.cuenta.profesional@gmail.com)  
