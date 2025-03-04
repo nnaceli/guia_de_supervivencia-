@@ -8,7 +8,7 @@
 
 El ingreso a la educación superior, en especial para las personas que ingresaron por primera vez luego de concluir la educación media a fines de la segunda dédacada del actual siglo (XXI) se vio profundamente marcada por una crisis de escala civilizatoria: La pandemia del COVID-19. En este contexto de caso total incertidumbre las universidades tuvieron que amoldarse a esta nueva situación en la que los estudiantes durante meses solo pudieron disponer y participar de clases, intercambio con sus compañeron, actividades y tramites en formato virtual a traves del uso de apliacciones como Zoom, Google Meet, WhatsApp, Discord y sitios web de cada universidad. Los grupos de WhatsApp, puntualmente, venían siendo y fueron (personalmente creo que lo seguiran siendo) los espacios digitales de mayor participación de los estudiantes para socializar, compartir sus dudas y ayudar a quien lo necesita.
 
-(imagen 1)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_1.jpg)
 
 Uno de los lugares donde este fenomeno se acentuo más fue en la carrera de Sistemas de la Universida Nacional de Lanús debido, principalemente, a un mayor interes y familiaridad en el uso de las tecnologias de la información y comunicación. Con el impulso de varios compañeros en el transcurso de los meses se crearon y autogestionaron grupos para los ingresantes, diversas materias de distintos años, hasta conformar un comunidad, que reunió a casi la mitad de todos los estudiantes de la carrera, enmarcada por un simple objetivo: 
 
@@ -42,11 +42,11 @@ Para lograr llevar el proyecto a cabo se iba a necesitar, por lo menos, contar c
 * Lenguaje de consulta (SQL)
 * Visualización de datos (Power BI/Tableau)
 
-(imagen 3)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_3.jpg)
 
 > (Todos estos conosimientos fueron adquiridos en un certificado como Data Analyst en la plataforma educatva de platzi)
 
-(imagen 4)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_4.jpg)
 
 #### Factibilidad ética
 
@@ -71,7 +71,7 @@ Poner en práctica los conocimientos aprendidos en la certificación como analis
 ### Encuesta
 Previo a siquiera recolectar los datos necesarios se corroboró la factibilidad ética. Para esto se diseño una encuesta la cual fuera precisa en comunicar el accionar y objetivo del proyecto, sin profundizar demasiado en su desarrollo ni en términologías técnicas, para posteriormente consultar el grado de valoración del mismo y si se contaba con el porcentaje suficiente de personas que dieran su consetimiento para utilizar el historial de chats de los grupos de WhatsApp. La respuesta era única y cerrada sobre cuatro opciones: 1) De acuerdo, excelente idea 2) De acuerdo, buena idea 3) En desacuerdo, mala idea 4) En desacuerdo, pésima idea.
 
-(imagen 5)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_5.jpg)
 
 #### Elección de destinatarios
 Dado que la comunidad estaba conformada por casi mil personas, para acotar la muestra de potenciales encuestados, se decidió utilizar los siguientes criterios para los encuestados:
@@ -82,7 +82,7 @@ Dado que la comunidad estaba conformada por casi mil personas, para acotar la mu
 #### Resultado inesperado
 El envio de las encuestas y la respuesta de las mismas tomó alrededor de una semana. Muy distinto a lo que se esperaba, el 100% de los encuestados estuvieron de acuerdo en que el proyecto se llevara a cabo de los cuales el (porcentaje) lo considero una excelente idea y el (porcentaje) lo consideró una buena idea.
 
-(imagen 6)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_6.jpg)
 
 ## Recolección de datos
 Para completar la corroboración de la factibilidad del proyecto se  procedió a recolectar los datos necesarios. Se descargaron los chats de los grupos de los integrantes de las tres comisiones del año 2022, dos pertenecientes al turno mañana y una al turno noche. Los chats de los grupos de las dos comisiones del año 2021 no se lograron recuperar. Los chats que se lograron recolectar poseen las siguientes características
@@ -93,8 +93,7 @@ Para completar la corroboración de la factibilidad del proyecto se  procedió a
 - Los mensajes qabarcan miles de registros
 - El periodo temporal de los chats corresponden el rango de entre marazo del 2022 y febrero del 2024, con una concentración de los datos en el año 2022.
 
-(imagen 7)
-(imagen 8)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_7.jpg)
 
 ## Extracción, limpieza y carga de los datos
 Una vez extraído los datos se evaluaron tres posibilidades para limpiarlos, darles formato y cargarlos en una base de datos.
@@ -142,7 +141,7 @@ int main()
 }
 ```
 
-(imagen 10)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_10.jpg)
 
 Conclusiones:
 
@@ -154,7 +153,7 @@ Conclusiones:
 
 En el caso de que el mensaje estuviera compuesto por más de una linea, este se une en una sola antes de imprimirlo por consola. La forma en que este se une es remplazando el salto de linea de la primer linea por un espacio " ". El criterio que se utiliza es que dicha linea comience con un formato propio de una fecha d/m/aaaa
 
-(imagen 11)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_11.jpg)
 
 ```
 #include <stdio.h>
@@ -206,8 +205,8 @@ linea fuera del bulce de lectura.
 
 Utilizando el mismo mecanismo del programa *Manipulación de saltos de linea*, se pega el texto resultante en un nuevo archivo para preservar los datos originales y corroborar resultados.
 
-(imagen 12)
-(imagen 13)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_12.jpg)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_13.jpg)
 
 >Antes de pasar a la siguiente etapa de prototipos se modificaron los set de datos para que las palabras no contengan caracteres especiales.
 
@@ -217,16 +216,16 @@ Utilizando el mismo mecanismo del programa *Manipulación de saltos de linea*, s
 
 Se revisa si el dia de la fecha de cada mensaje este compuesto de dos dígitos, en el caso de que este compuesto por un solo digito se le agrega un '0'
 
-(imagen 14)
-(imagen 15)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_14.jpg)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_15.jpg)
 
 
 *Estabdarizacion de fechas - version 2*
 
 Se revisa si el dia, el mes o ambas partes de la fecha de cada mensaje este compuesto por dos dígitos, la partes que esten compuestas de un solo digito se le agrega un '0'. De esta forma todos los mensajes quedan compuestos con el siguiente formato.
 
-(imagen 16)
-(imagen 17)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_16.jpg)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_17.jpg)
 
 #### **Prototipos de nivel 2**
 
@@ -236,8 +235,7 @@ La gran mayoría de los registros estan compuestos por mensajes, sin embargo hay
 
 Luego de una breve exploración se encontró un patron: Aquellos registros que no son mensajes estan compuestos por un signo de interrogación posterior a la parte de fecha-hora
 
-(imagen 18)
-(imagen 19)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_18.jpg)
 
 En base a esto, partiendo de un archivo con registros de ambos tipos, se revisa si este es un manseje o un evento utilizando como filtro el signo de interrogación. En el caso de que no posea el signo de interrogacón, es decir que se trate de un manseje, este se imprime por pantalla
 
@@ -249,8 +247,8 @@ A medida que se desarrollaron los prototipo surgió la idea de, ademas de cargar
 
 Sobre un registro se fragmenta la parte del mensaje en palabras utlizando como criterio de separacion los espacios ' '. Estas palabras se imprimen por palabra una por una
 
-(imagen 23)
-(imagen 25)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_22.jpg)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_25.jpg)
 
 *Fragmentación de mensajes en palabras - version 2*
 
@@ -286,7 +284,7 @@ Sobre un set de datos de diez marcas de celular se aplicó la siguiente formula
 
 Esta formula cumplia con la *Alta seguridad* pero no cumplía con la *Unicidad* ya que en vez de asignar un código único a cada marca, este hacía un conteo de la cantidad de veces que esta había aparecido
 
-(imagen 25.1)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_25.1.jpg)
 
 #### Prueba 2 - reankeo de números telefónicos
 Sobre un set de datos de vintiocho números telefónicos se aplico la siguiente formula:
@@ -295,7 +293,7 @@ Sobre un set de datos de vintiocho números telefónicos se aplico la siguiente 
 
 Esta formula no permitía cumplir ninguno de los dos requisitos y devolvía error ya que la celdas de los números telefónicos cotenían también caracteres no numéricos.
 
-(imagen 25.2)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_25.2.jpg)
 
 #### Prueba 3 - claves únicas a marcas 
 Sobre un set de datos de 7 registros compuesto por 5 marcas se aplico la siguiente formula
@@ -304,7 +302,7 @@ Sobre un set de datos de 7 registros compuesto por 5 marcas se aplico la siguien
 
 Con esta formula se busco asignar un identificador único a cada marca sin éxito ya que no se asignó correctamente la fijación de celdas
 
-(imagen 25.3)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_25.3.jpg)
 
 #### prueba 4 - claves únicas a números telefónicos
 Sobre un set de datos de decenas de registrs con mensajes se aplicó la siguiente formula
@@ -325,14 +323,14 @@ La columna A estaba compuesta por números telefónicos y la columna B por el n�
 3. Si el numero existía en el rango se buscaba el valor de clave que concidiera con dicho número y se lo asignaba dicho valor
 
 __ejemplo 1__
-(imágen 26)
-(imagen 27)
-(imagen 28)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_26.jpg)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_27.jpg)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_28.jpg)
 
 __ejemplo 2__
-(imagen 29)
-(imagen 30)
-(imagen 31)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_29.jpg)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_30.jpg)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_31.jpg)
 
 Sobre un set de datos de 13 números telefónicos se aplicó la siguiente formula
 
@@ -340,7 +338,7 @@ Sobre un set de datos de 13 números telefónicos se aplicó la siguiente formul
 
 De esta forma se logró finalmente cumplir con los requisistos de *Alta seguridad* y *Unicidad*
 
-(imagen 32)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_32.jpg)
 
 
 ### carga en base de datos
@@ -378,7 +376,7 @@ Se tomaron como base los set de datos de los 3 chats para generar los archivos .
 
 * Todas las tablas: Al no haber una columna que se pudiera tomar como clave primaria orgánioca, se creo una columna en la que se aplicó una formula contador para asignar un número único a cada registro
 
-    (imágen 33)
+    ![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_33.jpg)
 
     A la primer columna se le asigno el valor 1, y a partir de la segunda columna se asignó la siguiente fórmula
     
@@ -395,15 +393,15 @@ Al intentar subir los set de datos, pgAdmi 4 arrojaba mensaje de error sin espec
 - 10000
 - 15000
 
-(imagen 34)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_34.jpg)
 
 El mismo concepto se aplicaría a la inversa en el caso de ecnontrarse con el set de datos erroneo
 
-(imágen 35)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_35.jpg)
 
 Luego de probar esto se halló que el error se ecnontraba en el formato de la fecha el cual era **dd/mm/aaaa** y debía ser **aaaa-mm-dd**
 
-(imagen 36)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_36.jpg)
 
 Así finalmente se logró cargar la información necesaria en las bases de datos
 
@@ -437,7 +435,7 @@ select count(a.palabra) as total_palabras_usadas
 #### Palabras más utilizadas de forma descendente 
 Se contabilizó la cantidad de veces que se utilizó cada palabra y se ordeno de mayor a menor.
 
-(imágen 38) - resultado de consulta SQL // 6.1
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_38.jpg)
 
 Muchas de estas palabras no develavan información relevante ya que la mayoría eran conectores por lo que antes de continuar se realizó una investigación de los distintos tipos de palabras que existen
 
@@ -1156,11 +1154,10 @@ WHERE
 
 Obtenidas el conjunto de preguntas correspondientes a las tematicas más importantes, se hizo una sub-clasificación por cada clauster. Por ejemplo para las preguntas respecto a los trabajos prácticos se diferencio con colores aquellas que correspondian a la asignatura de programación, matemática, organización de computadoras y las que no estaban especificadas
 
-(imágen 67)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_67.jpg)
 
 Se realizo de esta manera el agrupamiento de las preguntas al no lograr encontrar criterios de palabras puntuales utilizando expresiones regulares. A esto se le sumó que un tercio de las preguntas no erán lo suficientemente específicas para darles una clasificación.
 
-(imágen 68)
 
 Como resultado se obtuvo una lista de casi 60 preguntas entre las que se incluyeron
 
@@ -1229,23 +1226,85 @@ Como resultado se obtuvo una lista de casi 60 preguntas entre las que se incluye
 
 A continuación se muestra como quedó separadas las preguntas en estos dos grupos
 
-(tabla 1)
-(tabla 2)
+#### Grupo 1 - Se pueden responder con precision
+|Pregunta                                                                       |
+|:------------------------------------------------------------------------------|
+|¿Quiénes no tiene que dar recuperatorio tienen clases igual?                   |
+|¿Si no di el parcial/presente tp, puedo dar el recuperatorio igual?            |
+|¿Cuándo es el examen?                                                          |
+|¿Qué temas se tomaron en el recuperatorio?                                     |
+|¿Qué temas se tomaron en el examen?                                            |
+|¿En que aula se rinde el final?                                                |
+|¿Puedo cursar una materia que desaprobé el final?                              |
+|¿En que aula se cursa, da el examen, rinde el final?                           |
+|¿Hay clases despues del parcial?                                               |
+|¿Qué se tomo en finales anteriores?                                            |
+|¿Qué se tomo en examenes anteriores?                                           |
+|¿Qué documentacion debo presentar para la incripción?                          |
+|¿Cuándo es el final?                                                           |
+|¿Cuándo aparece la materia en la que me inscribì en el campus?                 |
+|¿A qué mail puedo consultar por el boleto estudiantil?                         |
+|¿Cuándo son las inscripciones?                                                 |
+|¿Me puedo inscribir a dos mesas en un mismo llamado?                           |
+|¿Cuál es el mail del profesor?                                                 |
+|¿Cuál es el mail del depto de idiomas?                                         |
+|¿Cuándo arrancan las clases?                                                   |
+|¿Puedo dar un final de una asignatura que no me anoté?                         |
+|¿Matematica 1 y matematica 2 las puedo cursar en cualquier cuatrimestre?       |
+|¿Cómo me anoto a las materias?                                                 |
+|¿Las fechas de isncripcion a los finales y a las cursadas son las mismas?      |
+|¿Me puedo anotar en un final en el segundo llamado si desaprobé el primero?    |
+|¿Puedo anotarme a una cursada y luego dejarla o no cursarla?                   |
+|¿Cuál es el mapa de la unla?                                                   |
+|¿Cómo me anoto a una cursada o a un final?                                     |
+|¿Cuándo me puedo anotar al segundo llamado?                                    |
+|¿Cuándo son las inscripciones al cuatrimestre?                                 |
+|¿Cuántas veces puedo dar un final sin perder la cursada?                       |
+|¿Dónde me anoto para dar una materia?                                          |
+|¿Es necesario hacer algo mas para anotarme a una materia ademas del siu?       |
+|¿Cuál es el usuario para entrar al siu guarani?                                |
+|¿Qué hago si tengo un problema con el usuario del siu guarani?                 |
+|¿En donde hago la encuesta cuatrimestral?                                      |
+|¿Me tengo que anotar a un final de una asignatura que todavía estoy cursando?  |
+|¿Que pasa cuando se llena el cupo de estudiante?                               |
+|¿Si tengo que recursar una materia, puedo elegir el turno?                     |
+|¿Hay algun archivo con las fechas para incribirse a los finales?               |
+|¿Si promocione una materia, tengo que anotarme al final igual?                 |
+|¿Cómo me anoto para dar un final libre?                                        |
+|¿Con los contenidos vistos en 1er año, se pueda comenzar a trabajar?           |
+|¿Dónde puedo consultar para reincorporarme?                                    |
+|¿Hay deportes en la universidad?                                               |
+|¿Cuánto dura la carrera?                                                       |
+
+
+#### Grupo 2 - La respuesta depende del contexto
+
+|Pregunta                                                                       |
+|:------------------------------------------------------------------------------|
+|¿Cuándo es el recuperatorio?                                                   |
+|¿Qué se tomo en el recuperatorio?                                              |
+|¿Qué temas se van a tomar en el parcial?                                       |
+|¿Alguien hizo este ejercicio del tp de matematica?                             |
+|¿El tp de matematica se entrega?                                               |
+|¿La clase/examen de mañana es presencial o virtual?                            |
+|¿Cuándo se suben las notas?                                                    |
+|¿Ya se subieron las notas?                                                     |
+|¿A qué hora es la clase?                                                       |
+|¿Alguien hizo este punto del tp?                                               |
+|¿Alguien hizo el tp?                                                           |
 
 Las preguntas del grupo 1 se tomaron como referencia para plasmar en el documento FAQ de preguntas y respuestas. De las preguntas del grupo 2 se tomaron como referencia para el documento FAQ y para tomar medidas indirectas que ayuden a responder dichas preguntas. 
 
-
-
 Las conclusiones que a las que se llegaron por temática fueron
 
-Materias: Las asignaturas de programación y matemática, en comparación a otras, fueron las más consultadas 
-Cursada: La principal duda fue la fecha de los exámenes recuperatorios
-Inscripciones: Se consulta principalmente los criterios y requisitos de inscripción a finales y cursadas igual o más que las fechas de inscripción
-Finales: La duda respecto a si se subieron las notas es casi igual de relevante como los contenidos de evaluación
+1. Materias: Las asignaturas de programación y matemática, en comparación a otras, fueron las más consultadas 
+2. Cursada: La principal duda fue la fecha de los exámenes recuperatorios
+3. Inscripciones: Se consulta principalmente los criterios y requisitos de inscripción a finales y cursadas igual o más que las fechas de inscripción
+4. Finales: La duda respecto a si se subieron las notas es casi igual de relevante como los contenidos de evaluación
 
 Hubieron en proporción pareja de preguntas que se pueden responder con precisión como preguntas que depende del contexto
 
-(imagen 69)
+![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_69.jpg)
 
 De las preguntas que dependen del contexto hubo algunas que se tomaron para responder en el documento FAQ, otras fueron utilizadas como referencia para tomar medidas indirectas y otras se descartaron por estar fuera de alcance de ser respondidas
 
