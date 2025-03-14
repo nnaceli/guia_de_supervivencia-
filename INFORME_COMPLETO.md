@@ -44,7 +44,7 @@ Para lograr llevar el proyecto a cabo se iba a necesitar, por lo menos, contar c
 
 ![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_3.jpg)
 
-> (Todos estos conosimientos fueron adquiridos en un certificado como Data Analyst en la plataforma educatva de platzi)
+> (Todos estos conocimientos fueron adquiridos en un certificado como Data Analyst en la plataforma educatva de platzi)
 
 ![](https://github.com/nnaceli/guia_de_supervivencia-/blob/master/images/imagen_4.jpg)
 
